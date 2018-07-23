@@ -1,9 +1,13 @@
 'use strict';
 const express = require('express');
 const app = express();
+var favicon = require('serve-favicon')
+var path = require('path')
+
 const chatCat = require('./app');
 const passport = require('passport');
 
+app.use(favicon(path.join(__dirname, 'public/img', 'favicon.ico')))
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
